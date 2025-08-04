@@ -2,11 +2,17 @@ console.log("== TypeScript Test ==");
 
 // 변수 기본타입
 //문자열
-let name : string = 'PNU';
-console.log(`${name}님 안녕하세요`)
+// let name : string = 'PNU';
+// console.log(`${name}님 안녕하세요`)
 
-name = "부산대학교"
-console.log(`${name}님 안녕하세요`)
+// name = "부산대학교"
+// console.log(`${name}님 안녕하세요`)
+
+let userName : string = 'PNU';
+console.log(`${userName}님 안녕하세요`)
+
+userName = "부산대학교"
+console.log(`${userName}님 안녕하세요`)
 
 // 숫자
 let age : number ;
