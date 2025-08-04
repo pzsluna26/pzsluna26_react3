@@ -52,11 +52,11 @@ export default function Subway() {
 
   return (
   <div className='w-full'>
-   <div className="flex justify-between items-center w-full px-4 gap-4">
+   <div className="flex justify-between items-center w-full px-4 gap-4 mb-5">
       <div className="font-bold text-3xl ml-20">측정소 선택</div>
       <TailSelect selRef={selv} handleSel={handelSel}/>
     </div>
-    <div className='w-full'>
+    <div className='ml-20 mr-20'>
         {
             timeData.map((item, idx)=>(
                 <SubwayBox key={item['controlnumber']}

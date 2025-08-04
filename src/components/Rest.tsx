@@ -82,19 +82,21 @@ export default function Rest() {
                     color="blue"
                     onHandle={handleInput}/>
       </form>
-      <ul className="flex flex-col mt-10">
-        {
-            tdata.map(item => (
-                    <div key={item.id} className='border-1 black text-center'>
-                        id : {item['id']} <br />
-                        title : {item['title']} <br />
-                        author : {item['author']}
-                        <TailButton caption='삭제' color='blue'onHandle={()=>handleDelete(item.id)}/>
-                    </div>
-                    
-                ))
-        }
-      </ul>
+     <ul className="flex flex-col w-150 mt-5 gap-2">
+  {tdata.map(item => (
+    <li key={item.id} className="flex justify-between items-center p-2 rounded">
+      <div className="flex space-x-4">
+            <span>id: {item.id}</span>
+            <span>title: {item.title}</span>
+            <span>author: {item.author}</span>
+      </div>
+      <TailButton
+        caption="삭제"
+        color="blue"
+        onHandle={() => handleDelete(item.id)}/>
+    </li>
+  ))}
+</ul>
     
     </div>
   )

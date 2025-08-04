@@ -11,7 +11,7 @@ export default function TailSelect({selRef,handleSel} : SelectProps) {
   return (
     <select className=' border border-gray-300 text-gray-900 text-sm rounded-lg 
                         focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5 
-                        dark:border-gray-600 dark:placeholder-gray-400 
+                        dark:border-gray-600 dark:placeholder-gray-400 mr-20
                         dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
             ref={selRef}
             onChange={handleSel}>

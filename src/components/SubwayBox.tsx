@@ -36,7 +36,7 @@ export default function SubwayBox({ data, idx }: SubwayBoxProps) {
         {data['site']}{data['city']} (시각 : {year}. {month}. {day} {time}시 )
       </div>
 
-      <div className='w-full grid grid-cols-9 gap-1'>
+      <div className='grid grid-cols-9 border-gray-300 rounded-xl mb-2'>
         {
           Object.keys(scode).map(key => (
             <div key={key} className='border border-gray-200'>
