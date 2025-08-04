@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": "6f33",
+      "text": "할일을 하자",
+      "completed": "O"
+    },
+    {
+      "id": "c5d7",
+      "text": "ㅇㄹㄴㅇㄹ",
+      "completed": "X"
+    },
+    {
+      "id": "a879",
+      "text": "ddd",
+      "completed": "X"
+    },
+    {
+      "id": "6b71",
+      "text": "sdf",
+      "completed": "X"
+    },
+    {
+      "id": "67e8",
+      "text": "dfdsf",
+      "completed": "X"
+    }
+  ]
+}
