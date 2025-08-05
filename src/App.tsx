@@ -4,9 +4,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './components/Home'
 import Login from './components/Login'
-import Subway from './components/Subway'
+import Subway from './components/Subway2'
 import Rest from './components/Rest'
 import TodoList from './components/TodoList'
+import MyClock from './02/MyClock'
+import Lotto from './05/Lotto'
+import FoodMain from './06/FoodMain'
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
             <Route path="/Subway" element={<Subway />} />
             <Route path="/TodoList" element={<TodoList />} />
             <Route path="/Rest" element={<Rest/>}/>
+            <Route path="/MyClock" element={<MyClock/>}/>
+            <Route path="/Lotto" element={<Lotto/>}/>
+            <Route path="/FoodMain" element={<FoodMain/>}/>
           </Routes>
         </main>
         <footer className="w-full min-h-20 flex justify-center items-center bg-blue-400 text-white">

@@ -1,47 +1,42 @@
 import { useEffect } from 'react'
 import TailSelect from '../ui/TailSelect'
 import { useRef,useState } from 'react'
-import SubwayBox from './SubwayBox'
+import SubwayBox2 from './SubwayBox2'
 
 //알고있으면 키값을, [key: string]: any; 보다는 명시적으로 아래처럼 하는게 좋음
-// interface SubwayItem {
-//       "city": string,
-//       "pm10": string,
-//       "co2": string,
-//       "co": string,
-//       "no2": string,
-//       "no": string,
-//       "nox": string,
-//       "o3": string,
-//       "pm25": string,
-//       "fad": string,
-//       "controlnumber": string,
-//       "areaIndex": string,
-//       "office": string,
-//       "site": string
-// };
-
-interface SubwayItem {
-  [key: string]: any;
-  controlnumber: string;
-  site: string;
-  city: string;
+export interface TdataItem {
+      "city": string,
+      "pm10": string,
+      "co2": string,
+      "co": string,
+      "no2": string,
+      "no": string,
+      "nox": string,
+      "o3": string,
+      "pm25": string,
+      "fad": string,
+      "controlnumber": string,
+      "areaIndex": string,
+      "office": string,
+      "site": string
 };
 
 
-export default function Subway() {
+export default function Subway2() {
   const selv = useRef<HTMLSelectElement>(null);
-  const [tdata, setTdata] = useState<SubwayItem[]>([]);
-  const [timeData, setTimeData] = useState<SubwayItem[]>([]);
-
+                                     //useState type
+  const [tdata, setTdata] = useState<TdataItem[]>([]);
+  const [timeData, setTimeData] = useState<TdataItem[]>([]);
+  // const sareaCode : string[] = sarea.map()
 
   const getDataFatch = async() => {
 
     const baseurl = "https://apis.data.go.kr/6260000/IndoorAirQuality/getIndoorAirQualityByStation?"
-    const key = `serviceKey=${import.meta.env.VITE_DATA_API}`
+    const apiKey = `serviceKey=${import.meta.env.VITE_DATA_API}`
+                                                                              // ? => null일 수 도 있음
     const etc = `&pageNo=1&resultType=json&controlnumber=20250723&areaIndex=${selv.current?.value}`
 
-    const url = `${baseurl}${key}${etc}`
+    const url = `${baseurl}${apiKey}${etc}`
 
     
     const resp = await fetch(url);
@@ -59,10 +54,8 @@ export default function Subway() {
 
   useEffect(()=>{
     console.log("tdata",tdata)
-
-    // let tm : string[] = [];  => 명시안해도 ts가 유추함
-    let tm = [];
-
+       // 명시안해도 ts가 유추함
+    let tm : string[] = [];
     tm = tdata.map(item => item.controlnumber);
     tm.sort();
     console.log("시간 정렬", tm);
@@ -74,6 +67,8 @@ export default function Subway() {
     setTimeData(tmData);
   }, [tdata]);
 
+
+console.log(tdata)
   return (
   <div className='w-full'>
    <div className="flex justify-between items-center w-full px-4 gap-4 mb-5">
@@ -81,9 +76,9 @@ export default function Subway() {
       <TailSelect selRef={selv} handleSel={handelSel}/>
     </div>
     <div className='ml-20 mr-20'>
-        {
-            timeData.map((item, idx)=>(
-                <SubwayBox key={item['controlnumber']}
+        {                // 타입 명시안해도 되긴 함
+            timeData.map((item : TdataItem, idx : number)=>(
+                <SubwayBox2 key={item['controlnumber']}
                             data={item}
                             idx={idx}/>
             ))

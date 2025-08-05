@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
-import TailButton from '../components/TailButton';
-import TailSelect2 from '../components/TailSelect2';
+import TailButton from '../ui/TailButton';
+import TailSelect2 from '../ui/TailSelect2';
 
 type TodoFormProps = {
   addTodo: (text: string, status: string) => void;

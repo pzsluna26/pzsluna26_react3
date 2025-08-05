@@ -2,19 +2,19 @@ import scodeRaw from '../db/scode.json';
 const scode = scodeRaw as SensorCode;
 
 
-type SubwayData = {
+interface SubwayData {
   controlnumber: string | number;
   site: string;
   city: string;
   [key: string]: any; // 나머지 필드 (ex. pm10, pm25 등)
 };
 
-type SubwayBoxProps = {
+interface SubwayBoxProps {
   data: SubwayData;
   idx: number;
 };
 
-type SensorCode = {
+interface SensorCode  {
   [key: string]: {
     name: string;
     unit: string;

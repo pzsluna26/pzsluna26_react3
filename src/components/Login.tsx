@@ -11,7 +11,7 @@ interface accountType {
 export default function Login() {
   const [login,setLogin] = useAtom(isLogin);
   const navigate = useNavigate();
-
+  
   const account : accountType = {email : "pzsluna26@gmail.com", pwd : 1234};
 
   const emailRef = useRef<HTMLInputElement>(null);
@@ -19,11 +19,11 @@ export default function Login() {
 
 
   const handleLogin = (e:MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault(); // ✅ 새로고침 막기
-    const emailin : string | undefined = emailRef.current?.value;
+    e.preventDefault(); 
+    const email : string | undefined = emailRef.current?.value;
     const pwd : string | undefined = pwdRef.current?.value;
 
-    if (emailin == undefined) {
+    if (email == undefined) {
       alert("이메일을 입력하세요.");
       emailRef.current?.focus();
     }
@@ -35,11 +35,13 @@ export default function Login() {
     //   return; 
     // }
 
-    if (emailin === account.email) {
-      if (account.email === emailin && String(account.pwd) === pwd) {
+    if (email === account.email) {
+      if (account.email === email && String(account.pwd) === pwd) {
         alert("로그인 성공!");
         setLogin(true);
-        <div>{emailin}님이 로그인 되었습니다</div>
+        localStorage.setItem("id", email);
+        return;
+
       }
       else {
         alert("비밀번호가 다릅니다!");

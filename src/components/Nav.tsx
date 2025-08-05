@@ -31,7 +31,9 @@ export default function Nav() {
           <div className="text-gray-500 font-bold text-xs">
             <ul className="flex justify-center items-center">
               <Link to = "/Home"><li className="px-2 hover:bg-amber-100 rounded-xl hover:text-black">홈으로</li></Link>
-              
+              <Link to ='/MyClock'><li className="px-2 hover:bg-amber-100 rounded-xl hover:text-black">시계</li></Link>
+              <Link to ='/Lotto'><li className="px-2 hover:bg-amber-100 rounded-xl hover:text-black">로또</li></Link>
+              <Link to ='/FoodMain'><li className="px-2 hover:bg-amber-100 rounded-xl hover:text-black">푸드</li></Link>
               {/* 자바스크립트 && 연산자 = 왼쪽이 true 일때 오른쪽이 실행됨 */}
               { 
                 login && <Link to = "/Subway">

@@ -1,10 +1,18 @@
 import { useAtom } from "jotai";
 import { isLogin } from "../atoms/IsLoginAtom";
+import { useEffect, useState } from "react";
 import Login from "./Login";
 
-export default function Home(): JSX.Element {
-  const [login, setLogin] = useAtom(isLogin);
-  const id = localStorage.getItem("id");
+export default function Home() {
+  const [login] = useAtom(isLogin);
+  const [id, setId] = useState<string | null>(null);
+
+    useEffect(() => {
+    if (login) {
+      const storedId = localStorage.getItem("id");
+      setId(storedId);
+    }
+  }, [login]);
 
   return (
     <div>

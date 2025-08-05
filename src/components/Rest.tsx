@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef} from "react"
 import axios from "axios";
-import TailButton from "../components/TailButton"
+import TailButton from "../ui/TailButton"
 
 const baseUrl = "http://localhost:3005/todos"; 
 

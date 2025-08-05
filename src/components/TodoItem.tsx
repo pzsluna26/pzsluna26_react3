@@ -1,5 +1,5 @@
 
-import TailButton from './TailButton';
+import TailButton from '../ui/TailButton';
 
 interface TodoItemProps {
   item: {
